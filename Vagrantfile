@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
             guest_config.vm.provision :puppet do |puppet|
                 puppet.manifests_path = "provision/puppet/manifests"
                 puppet.manifest_file  = "site.pp"
-            #    puppet.module_path = ["provision/puppet/modules"]
+                puppet.module_path = ["provision/puppet/modules"]
                 puppet.options = "--verbose --debug"
             end
 

@@ -9,3 +9,4 @@ class update{
 }
 
 include update
+include wget

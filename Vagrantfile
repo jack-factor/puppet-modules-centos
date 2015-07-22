@@ -41,12 +41,12 @@ Vagrant.configure("2") do |config|
 
             #guest_config.vm.provision :shell, :inline => "echo \"America/Bogota\" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata"
 
-            #guest_config.vm.provision :puppet do |puppet|
-            #    puppet.manifests_path = "provision/puppet/manifests"
-            #    puppet.manifest_file  = "site.pp"
+            guest_config.vm.provision :puppet do |puppet|
+                puppet.manifests_path = "provision/puppet/manifests"
+                puppet.manifest_file  = "site.pp"
             #    puppet.module_path = ["provision/puppet/modules"]
-            #    puppet.options = "--verbose --debug"
-            #end
+                puppet.options = "--verbose --debug"
+            end
 
             guest_config.vm.provision :hostmanager
             #guest_config.vm.provision :shell, :path => "provision/shell/composer.sh"

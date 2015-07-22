@@ -11,3 +11,4 @@ class update{
 include update
 include wget
 include epel
+include git

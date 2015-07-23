@@ -13,3 +13,4 @@ include wget
 include epel
 include git
 include nginx
+include mysql

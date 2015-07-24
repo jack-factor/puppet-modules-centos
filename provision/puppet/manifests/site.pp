@@ -14,3 +14,4 @@ include epel
 include git
 include nginx
 include mysql
+include php55

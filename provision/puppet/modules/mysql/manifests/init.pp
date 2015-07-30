@@ -2,11 +2,14 @@ class mysql
 {
     $mysqlPassword = '123456'
 
+    exec{ 'mysql-rpm':
+        command => 'rpm -Uvh https://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm',
+        unless => 'rpm -q mysql-community-release-el7-5.noarch',
+    }
+
     package { 'mysql-community-server':
-        provider => 'rpm',
-        ensure => installed,
-        source => '-Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm',
-        require => Class['Update'],
+        ensure => '5.6.26-2.el7',
+        require => Exec['mysql-rpm'],
     }
     
     service { 'mysqld':

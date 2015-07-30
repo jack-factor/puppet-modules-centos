@@ -26,7 +26,7 @@ class php55 {
     exec{
         'enable-php55':
             command => "rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm",
-            require => Class['Update'],
             onlyif => "rpm -q  https://mirror.webtatic.com/yum/el7/webtatic-release.rpm",
+            require => Class['Epel'],
     }
 }

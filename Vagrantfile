@@ -3,8 +3,8 @@
 #
 Vagrant.configure("2") do |config|
     config.vm.define :guest do |guest_config|
-            guest_config.vm.box = "centos7"
-            guest_config.vm.box_url = "https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box"
+            guest_config.vm.box = "primax_centos6"
+            guest_config.vm.box_url = "https://www.dropbox.com/s/wplhvd105m4msub/package.box?dl=1"
             guest_config.ssh.forward_agent = true
              
             #HostManager Start

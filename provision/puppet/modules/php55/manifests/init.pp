@@ -29,4 +29,15 @@ class php55 {
             require => Class['Update'],
             unless => 'rpm -q webtatic-release-6-6.noarch'
     }
+
+    exec{ 'enable_php-fpm':
+        command => 'chkconfig php-fpm on',
+        require => Package['php55w-fpm'],
+    }
+
+    exec{ 'service-fpm':
+        command => 'service php-fpm restart',
+        require => Exec['enable_php-fpm'],
+    }
+
 }

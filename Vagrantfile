@@ -3,7 +3,7 @@
 #
 Vagrant.configure("2") do |config|
     config.vm.define :guest do |guest_config|
-            guest_config.vm.box = "primax_centos6"
+            guest_config.vm.box = "primax_centos7"
             guest_config.vm.box_url = "https://www.dropbox.com/s/wplhvd105m4msub/package.box?dl=1"
             guest_config.ssh.forward_agent = true
              
